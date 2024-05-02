@@ -23,4 +23,4 @@ cd NameSorter
 ```
 
 ## Potential changes
-If efficiency is the goal of the program, the NameSorter function can be switched out with the NameSorterEfficient. This is slightly less readable, but uses multi-core parallel functions to speed up functionality by roughly 20%.
+If efficiency is the goal of the program, the `NameSorter` service can be switched out with the `NameSorterEfficient`. This is slightly less readable, but uses multi-core parallel functions to speed up functionality by roughly 20%.
