@@ -1,6 +1,5 @@
 using NameSorter.Interfaces;
 using NameSorter.Services;
-using System.IO.Pipelines;
 
 class Program
 {
