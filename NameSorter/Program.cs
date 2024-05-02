@@ -5,7 +5,7 @@ class Program
 {
     private static string _sortedFileName = "sorted-names-list.txt";
 
-    static async Task Main(string[] args)
+    static void Main(string[] args)
     {
         if (args.Length == 0)
         {
