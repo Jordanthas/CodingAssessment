@@ -20,6 +20,19 @@ namespace NameSorter.Tests
         }
 
         [Fact]
+        public void SortNames_ShouldCorrectlySortNamesByLastNameThenFirstNameThenMiddleName()
+        {
+            // Arrange
+            var names = new[] { "Janet Bramley Parsons", "Janet Adin Parsons", "Janet Cameron Parsons", "Vaughn Lewis", "Adonis Julius Archer" };
+            var expected = new[] { "Adonis Julius Archer", "Vaughn Lewis", "Janet Adin Parsons", "Janet Bramley Parsons", "Janet Cameron Parsons" };
+            // Act
+            var sortedNames = _sorter.SortNames(names);
+
+            // Assert
+            Assert.Equal(expected, sortedNames);
+        }
+
+        [Fact]
         public void SortNames_ShouldHandleSingleName()
         {
             // Arrange
