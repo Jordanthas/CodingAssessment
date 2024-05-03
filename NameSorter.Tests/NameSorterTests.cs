@@ -46,39 +46,11 @@ namespace NameSorter.Tests
         }
 
         [Fact]
-        public void SortNames_ShouldIgnoreLeadingAndTrailingSpaces()
-        {
-            // Arrange
-            var names = new[] { "  Janet Parsons  ", "Vaugn Lewis" };
-            var expected = new[] { "Vaugn Lewis", "Janet Parsons" };
-
-            // Act
-            var sortedNames = _sorter.SortNames(names);
-
-            // Assert
-            Assert.Equal(expected, sortedNames);
-        }
-
-        [Fact]
         public void SortNames_ShouldHandleNamesWithTitlesCorrectly()
         {
             // Arrange
             var names = new[] { "Mr. John Smith", "Dr. Jane Smith" };
             var expected = new[] { "Dr. Jane Smith", "Mr. John Smith" };
-
-            // Act
-            var sortedNames = _sorter.SortNames(names);
-
-            // Assert
-            Assert.Equal(expected, sortedNames);
-        }
-
-        [Fact]
-        public void SortNames_ShouldHandleEmptyRowsInFile()
-        {
-            // Arrange
-            var names = new[] { "Janet Parsons", "", "Vaugn Lewis" };
-            var expected = new[] { "Vaugn Lewis", "Janet Parsons" };
 
             // Act
             var sortedNames = _sorter.SortNames(names);

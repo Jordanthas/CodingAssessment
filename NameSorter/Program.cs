@@ -16,14 +16,16 @@ class Program
         var filename = args[0];
         INameReader nameReader = new NameReader();
         INameSorter nameSorter = new NameSorter.Services.NameSorter();
+        INameValidator nameValidator = new NameValidator();
         INameWriter nameWriter = new NameWriter();
 
         try
         {
             var names = nameReader.ReadNames(filename);
-            var sortedNames = nameSorter.SortNames(names);
-            nameWriter.WriteNames(sortedNames, _sortedFileName);
-            nameWriter.PrintNamesToConsole(sortedNames);
+            var cleanedNames = nameValidator.ValidateAndCleanNames(names);
+            var cleanedAndSortedNames = nameSorter.SortNames(cleanedNames);
+            nameWriter.WriteNames(cleanedAndSortedNames, _sortedFileName);
+            nameWriter.PrintNamesToConsole(cleanedAndSortedNames);
         }
         catch (Exception ex)
         {

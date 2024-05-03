@@ -4,12 +4,10 @@ namespace NameSorter.Services
 {
     public class NameSorterEfficient : INameSorter
     {
-        public IEnumerable<string> SortNames(string[] names)
+        public IEnumerable<string> SortNames(IEnumerable<string> names)
         {
             // Precompute last names and store them with the original name
-            var nameEntries = names.Select(name => name.Trim())
-                                   .Where(trimmedName => !string.IsNullOrWhiteSpace(trimmedName))
-                                   .Select(trimmedName => new NameEntry(trimmedName));
+            var nameEntries = names.Select(trimmedName => new NameEntry(trimmedName));
 
             // Parallel sort using custom comparer
             var sortedEntries = nameEntries.AsParallel()

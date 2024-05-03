@@ -2,6 +2,6 @@
 {
     public interface INameSorter
     {
-        IEnumerable<string> SortNames(string[] names);
+        IEnumerable<string> SortNames(IEnumerable<string> names);
     }
 }
