@@ -25,7 +25,7 @@ namespace NameSorter.Services
             var names = _nameReader.ReadNames(fileName);
             var cleanedNames = _nameValidator.ValidateAndCleanNames(names);
             var cleanedAndSortedNames = _nameSorter.SortNames(cleanedNames);
-            _nameWriter.WriteNames(cleanedAndSortedNames, _sortedFileName);
+            _nameWriter.WriteNamesToFile(cleanedAndSortedNames, _sortedFileName);
             _nameWriter.PrintNamesToConsole(cleanedAndSortedNames);
         }
     }

@@ -15,7 +15,7 @@ class Program
 
         INameProcessor nameProcessor = new NameProcessor(
             new NameReader(),
-            new NameSorter.Services.NameSorter(),
+            new NameSorter.Services.Sorters.NameSorter(),
             new NameValidator(), 
             new NameWriter(), 
             _sortedFileName);

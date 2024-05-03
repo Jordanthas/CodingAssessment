@@ -4,7 +4,7 @@ namespace NameSorter.Tests
 {
     public class NameSorterTests
     {
-        private readonly INameSorter _sorter = new Services.NameSorter();
+        private readonly INameSorter _sorter = new Services.Sorters.NameSorter();
 
         [Fact]
         public void SortNames_ShouldCorrectlySortNamesByLastNameThenFirstName()

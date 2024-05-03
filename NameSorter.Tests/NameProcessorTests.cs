@@ -23,7 +23,7 @@ namespace NameSorter.Tests
             mockReader.Setup(m => m.ReadNames(inputFileName)).Returns(names);
             mockValidator.Setup(m => m.ValidateAndCleanNames(names)).Returns(cleanedNames);
             mockSorter.Setup(m => m.SortNames(cleanedNames)).Returns(sortedNames);
-            mockWriter.Setup(m => m.WriteNames(sortedNames, outputFileName));
+            mockWriter.Setup(m => m.WriteNamesToFile(sortedNames, outputFileName));
             mockWriter.Setup(m => m.PrintNamesToConsole(sortedNames));
 
             var processor = new NameProcessor(mockReader.Object, mockSorter.Object, mockValidator.Object, mockWriter.Object, outputFileName);
@@ -35,7 +35,7 @@ namespace NameSorter.Tests
             mockReader.Verify(m => m.ReadNames(inputFileName), Times.Once);
             mockValidator.Verify(m => m.ValidateAndCleanNames(names), Times.Once);
             mockSorter.Verify(m => m.SortNames(cleanedNames), Times.Once);
-            mockWriter.Verify(m => m.WriteNames(sortedNames, outputFileName), Times.Once);
+            mockWriter.Verify(m => m.WriteNamesToFile(sortedNames, outputFileName), Times.Once);
             mockWriter.Verify(m => m.PrintNamesToConsole(sortedNames), Times.Once);
         }
     }

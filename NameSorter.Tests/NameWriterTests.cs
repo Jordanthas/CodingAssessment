@@ -15,7 +15,7 @@ namespace NameSorter.Tests
             var names = new[] { "Janet Parsons", "Vaughn Lewis" };
 
             // Act
-            _writer.WriteNames(names, _outputFilePath);
+            _writer.WriteNamesToFile(names, _outputFilePath);
             var fileContents = File.ReadAllLines(_outputFilePath);
 
             // Assert

@@ -1,6 +1,6 @@
 ﻿using NameSorter.Interfaces;
 
-namespace NameSorter.Services
+namespace NameSorter.Services.Sorters
 {
     public class NameSorter : INameSorter
     {
