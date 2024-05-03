@@ -9,7 +9,7 @@ namespace NameSorter.Services
             // Precompute last names and store them with the original name
             var nameEntries = names.Select(trimmedName => new NameEntry(trimmedName));
 
-            // Parallel sort using custom comparer
+            // Parallel sort - Only really efficient in a multi-core environment
             var sortedEntries = nameEntries.AsParallel()
                                            .OrderBy(entry => entry.LastName)
                                            .ThenBy(entry => entry.OriginalName);

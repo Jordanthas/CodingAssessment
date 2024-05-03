@@ -1,5 +1,4 @@
-﻿
-using NameSorter.Interfaces;
+﻿using NameSorter.Interfaces;
 using NameSorter.Services;
 
 namespace NameSorter.Tests

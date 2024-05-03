@@ -13,19 +13,18 @@ class Program
             return;
         }
 
-        var filename = args[0];
-        INameReader nameReader = new NameReader();
-        INameSorter nameSorter = new NameSorter.Services.NameSorter();
-        INameValidator nameValidator = new NameValidator();
-        INameWriter nameWriter = new NameWriter();
+        INameProcessor nameProcessor = new NameProcessor(
+            new NameReader(),
+            new NameSorter.Services.NameSorter(),
+            new NameValidator(), 
+            new NameWriter(), 
+            _sortedFileName);
+
+        var fileName = args[0];
 
         try
         {
-            var names = nameReader.ReadNames(filename);
-            var cleanedNames = nameValidator.ValidateAndCleanNames(names);
-            var cleanedAndSortedNames = nameSorter.SortNames(cleanedNames);
-            nameWriter.WriteNames(cleanedAndSortedNames, _sortedFileName);
-            nameWriter.PrintNamesToConsole(cleanedAndSortedNames);
+            nameProcessor.SortFile(fileName);  
         }
         catch (Exception ex)
         {
