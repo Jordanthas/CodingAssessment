@@ -10,7 +10,7 @@ NameSorter is a .NET Core console application that sorts a list of names. It ord
 - Handles empty lines and trims unnecessary spaces from names to ensure accurate sorting.
 
 ## Requirements
-- Targeted framework .NET 8.0 (Successor to .NET Core)
+- Targeted framework .NET 8.0 (Successor to .NET Core and compatible)
 
 ## Setup
 To run this project, you'll need to install [.NET 8.0](https://dotnet.microsoft.com/download).
