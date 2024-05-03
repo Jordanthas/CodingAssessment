@@ -24,7 +24,7 @@ class Program
 
         try
         {
-            nameProcessor.SortFile(fileName);  
+            nameProcessor.ProcessFile(fileName);  
         }
         catch (Exception ex)
         {
