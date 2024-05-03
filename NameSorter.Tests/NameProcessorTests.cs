@@ -7,7 +7,7 @@ namespace NameSorter.Tests
     public class NameProcessorTests
     {
         [Fact]
-        public void SortFile_ShouldProcessNamesCorrectly()
+        public void ProcessFile_ShouldProcessNamesCorrectly()
         {
             // Arrange
             var mockReader = new Mock<INameReader>();

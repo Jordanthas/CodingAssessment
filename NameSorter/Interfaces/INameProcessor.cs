@@ -2,6 +2,6 @@
 {
     public interface INameProcessor
     {
-        void SortFile(string fileName);
+        void ProcessFile(string fileName);
     }
 }

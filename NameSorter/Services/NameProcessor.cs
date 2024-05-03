@@ -20,7 +20,7 @@ namespace NameSorter.Services
             _sortedFileName = sortedFileName;
         }
 
-        public void SortFile(string fileName) 
+        public void ProcessFile(string fileName) 
         {
             var names = _nameReader.ReadNames(fileName);
             var cleanedNames = _nameValidator.ValidateAndCleanNames(names);
