@@ -29,7 +29,7 @@ namespace NameSorter.Tests
             var processor = new NameProcessor(mockReader.Object, mockSorter.Object, mockValidator.Object, mockWriter.Object, outputFileName);
 
             // Act
-            processor.SortFile(inputFileName);
+            processor.ProcessFile(inputFileName);
 
             // Assert
             mockReader.Verify(m => m.ReadNames(inputFileName), Times.Once);
