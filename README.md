@@ -8,6 +8,7 @@ NameSorter is a .NET Core console application that sorts a list of names. It ord
 - Sorts names by last name and then by given names.
 - Outputs sorted names to the console and writes them to a new text file.
 - Handles empty lines and trims unnecessary spaces from names to ensure accurate sorting.
+- Writes to a file named `sorted-names-list.txt`
 
 ## Requirements
 - Targeted framework .NET 8.0 (Successor to .NET Core and compatible)
